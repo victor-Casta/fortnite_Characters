@@ -1,0 +1,11 @@
+{
+  "name": "fortnite_characters",
+  "version": "1.0.0",
+  "description": "This is a landing focused on the use of animations having as its main theme some characters from the video game Fortnite",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Victor Arroyave",
+  "license": "MIT"
+}
