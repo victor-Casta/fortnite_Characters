@@ -182,12 +182,15 @@ body {
         position: absolute;
         z-index: 4;
         .modal-container {
+            position: relative;
             background-color: $white-color;
             width: 50%;
             height: 50%;
             .modal__content--close {
                 width: 40px;
                 height: 40px;
+                position: absolute;
+                right: 0;
             }
         }
     }

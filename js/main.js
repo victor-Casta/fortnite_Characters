@@ -1,21 +1,30 @@
 const firstImage = document.querySelector('#image_first');
 const secondImage = document.querySelector('#image_second');
-const thirdImage = document.querySelector('#image_third');
+const thirdImage = document.querySelector('#image-tree');
 const modal = document.querySelector('.modal');
+modal.classList.add('inactive')
 const closeModal = document.querySelector('.modal__content--close');
 
-function showModal() {
+function openSlideSection() {
     modal.classList.remove('inactive');
-    modal.classList.add('visible');
 }
 
-function hideModal() {
+function closeSlideSection() {
     modal.classList.add('inactive');
-    modal.classList.remove('visible');
-}   
+}
 
-firstImage.addEventListener('click', showModal);
-secondImage.addEventListener('click', showModal);
-thirdImage.addEventListener('click', showModal);
+firstImage.addEventListener('click', () => {
+    openSlideSection();
+})
 
-closeModal.addEventListener('click', hideModal);
+secondImage.addEventListener('click', () => {
+    openSlideSection();
+})
+
+thirdImage.addEventListener('click', () => {
+    openSlideSection();
+})
+
+closeModal.addEventListener('click', () => {
+    closeSlideSection();
+})
