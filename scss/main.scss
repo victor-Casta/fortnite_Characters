@@ -182,15 +182,74 @@ body {
         position: absolute;
         z-index: 4;
         .modal-container {
+            display: flex;
+            justify-content: center;
             position: relative;
-            background-color: $white-color;
+            background: rgb(22,18,36);
+            background: radial-gradient(circle, rgba(22,18,36,1) 0%, rgba(154,136,247,1) 35%, rgba(22,18,36,1) 100%);
+            border-radius: 15px;
             width: 50%;
             height: 50%;
             .modal__content--close {
                 width: 40px;
                 height: 40px;
                 position: absolute;
-                right: 0;
+                right: 10px;   
+                top: 10px;
+                cursor: pointer;
+            }
+            .modal-container__slider {
+                width: 300px;
+                height: 200px;
+                transform-style: preserve-3d;
+                input {
+                    visibility: hidden;
+                }
+                .cards {
+                    position: relative;
+                    width: 300px;
+                    height: 200px;
+                    label img {
+                        object-fit: cover;
+                        height: 300px
+                    }
+                    .card {
+                        background: var(--yellow);
+                        position: absolute;
+                        right: 0;
+                        left: 0;
+                        margin: 0 auto;
+                        transition: transform 0.5s ease;
+                        cursor: pointer;
+                        display: grid;
+                        place-items: center;
+                        height: 100%;
+                        width: 50%;
+                    }
+                }
+                #radio-1:checked ~ .cards #card-1,
+                #radio-2:checked ~ .cards #card-2,
+                #radio-3:checked ~ .cards #card-3 {
+                    transform: translateX(0%) scale(1);
+                    opacity: 1;
+                    z-index: 1;
+                }
+                
+                #radio-1:checked ~ .cards #card-2,
+                #radio-2:checked ~ .cards #card-3,
+                #radio-3:checked ~ .cards #card-1 {
+                    transform: translateX(-60%) scale(0.8);
+                    opacity: 0.5;
+                    z-index: 0;
+                }
+                
+                #radio-1:checked ~ .cards #card-3,
+                #radio-2:checked ~ .cards #card-1,
+                #radio-3:checked ~ .cards #card-2 {
+                    transform: translateX(60%) scale(0.8);
+                    opacity: 0.5;
+                    z-index: 0;
+                }
             }
         }
     }
